@@ -1,4 +1,4 @@
-export const addressInfo = [
+var addressInfo = [
   {
     address: '2817 W 33rd Ave',
     lat: 39.76335056,
