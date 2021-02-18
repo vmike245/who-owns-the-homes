@@ -10,7 +10,7 @@ console.log(addressInfo);
 addressInfo.forEach(({ address, lat, long, ownerName, allOwnedProperties }) => {
   const marker = L.marker([lat, long]).addTo(mymap);
   marker.bindPopup(
-    `${address} <br> Owned By: ${ownerName} <br> All Properties Owned: ${allOwnedProperties.join(
+    `${address} <br> <strong>Owned By</strong>: ${ownerName} <br> <strong>All Properties Owned</strong>: <br>${allOwnedProperties.join(
       '<br>'
     )}`
   );
