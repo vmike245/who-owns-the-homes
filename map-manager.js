@@ -16,7 +16,7 @@ addressInfo.forEach((addressWithInfo, index) => {
   try {
     const marker = L.circleMarker([parseFloat(lat), parseFloat(long)], {
       radius: 5,
-      color: '#ff000',
+      color: '#ff0000',
     }).addTo(mymap);
     marker.bindPopup(
       `${address} <br> <strong>Owned By</strong>: ${ownerName} <br> <strong>All Properties Owned</strong>: <br>${
