@@ -1,8 +1,8 @@
 // import { addressInfo } from './addresses-with-info.js';
 
 var mymap = L.map('mapid', { preferCanvas: true }).setView(
-  [39.7348, -104.9653],
-  20
+  [39.73865208, -104.98546635],
+  17
 );
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution:
