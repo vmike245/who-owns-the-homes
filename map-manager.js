@@ -17,7 +17,7 @@ addressInfo.forEach((addressWithInfo, index) => {
     const marker = L.circleMarker([parseFloat(lat), parseFloat(long)], {
       radius: 5,
       ...(governmentEntities.includes(ownerName) && {
-        color: red,
+        color: '#ff000',
         opacity: 0.5,
       }),
     }).addTo(mymap);
