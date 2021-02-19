@@ -18,7 +18,6 @@ addressInfo.forEach((addressWithInfo, index) => {
       radius: 5,
       ...(governmentEntities.includes(ownerName) && {
         color: '#ff000',
-        opacity: 0.5,
       }),
     }).addTo(mymap);
     marker.bindPopup(
