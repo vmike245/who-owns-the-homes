@@ -14,43 +14,85 @@
     ></script>
     <script type="application/javascript" src="address-with-info.js"></script>
   </head>
-  <body>
+  <body style="width: 1080px; margin: auto">
+    <h1>Who Owns Denver?</h1>
     <div id="mapid" style="height: 500px"></div>
     <main>
-      <h1>What is this?</h1>
-      <p>
-        This is a map of every property that is owned by a landlord. I have
-        defined a landlord as someone who owns more than 1 property or has LLC
-        or Trust in the name of the owner. This map should help illustrate how
-        much property in Denver is owned as "an investment".
-      </p>
-      <h3>How to use</h3>
-      <p>
-        Click on a marker to view the address, owner name, and the other
-        properties that person owns
-      </p>
-      <h3>How can I verify this information?</h3>
-      <p>
-        All of this information is publicly available and verifiable at
-        <a href="https://www.denvergov.org/property/realproperty/"
-          >https://www.denvergov.org/property/realproperty/</a
-        >
-      </p>
-      <h3>Things of Note</h3>
-      <ul>
-        <li>
-          Apartment buildings/condos are not included in this list. While the
-          owners are technically landlords, the goal of this project was to see
-          who is buying up all of the homes in Denver.
-        </li>
-        <li>
-          Since this list is compiled by owner, there are owners that some
-          people may not typically consider landlords. Owners like the "CITY &
-          COUNTY OF DENVER" or "SCHOOL DISTRICT NO 1". I left those in the data
-          set because I didn't want to accidentally remove one that sounds like
-          it is a government entity when really it is a private entity.
-        </li>
-      </ul>
+      <div>
+        <h2>What is this?</h2>
+        <p>
+          This is a map of every property that is owned by a landlord. I have
+          defined a landlord as someone who owns more than 1 property or has LLC
+          or Trust in the name of the owner. This map should help illustrate how
+          much property in Denver is owned as "an investment".
+        </p>
+      </div>
+      <div>
+        <h3>How to use</h3>
+        <p>
+          Click on a marker to view the address, owner name, and the other
+          properties that person owns.
+        </p>
+      </div>
+      <div>
+        <h3>How can I verify this information?</h3>
+        <p>
+          All of this information is publicly available and verifiable at
+          <a href="https://www.denvergov.org/property/realproperty/"
+            >https://www.denvergov.org/property/realproperty/</a
+          >
+        </p>
+      </div>
+      <div>
+        <h3>Things of Note</h3>
+        <ul>
+          <li>
+            Since this list is compiled by owner, there are owners that some
+            people may not typically consider landlords. Owners like the "CITY &
+            COUNTY OF DENVER" or "SCHOOL DISTRICT NO 1". I left those in the
+            data set because I didn't want to accidentally remove one that
+            sounds like it is a government entity when really it is a private
+            entity.
+          </li>
+          <li>
+            Government entities are marked using a red circle. Currently that
+            only includes the "CITY & COUNTY OF DENVER" but more can be added to
+            that list if necessary
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Mile High View</h3>
+        <p>
+          02/18/2021 - After a first pass it appears that between 25% - 33% of
+          home on any given block in Denver are rentals. Which would mean that 1
+          out of every 3 or 4 Denverites are renters
+        </p>
+      </div>
+      <div>
+        <h3>Why did you make this?</h3>
+        <p>
+          While living and working in Denver my partner and I have finally
+          decided we would like to buy a house. We have been renting until we
+          had enough money saved up. My partner had heard that we would be
+          competing against investors and landlords. I was interested in
+          learning how many properties in Denver were in fact owned by investors
+          and landlords so I figured this would be a neat project. Little did I
+          know how pervasive investor and landlord owned properties were.
+        </p>
+      </div>
+      <div>
+        <h3>How do I contact you? How do I report an issue?</h3>
+        <p>
+          If you find any issues in the data please feel free to create a
+          <a href="https://github.com/vmike245/who-owns-the-homes/issues/new">
+            new issue here.
+          </a>
+          <br />
+          If you would like to get in contact with me, you can reach me at
+          <a href="email:whoownsdenver@gmail.com">WhoOwnsDenver@gmail.com</a>
+        </p>
+      </div>
     </main>
   </body>
   <script src="map-manager.js"></script>

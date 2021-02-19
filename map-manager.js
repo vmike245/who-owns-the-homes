@@ -23,7 +23,7 @@ addressInfo.forEach((addressWithInfo, index) => {
     }).addTo(mymap);
     marker.bindPopup(
       `${address} <br> <strong>Owned By</strong>: ${ownerName} <br> <strong>All Properties Owned</strong>: <br>${
-        allOwnedProperties.length > 10
+        allOwnedProperties.length > 25
           ? allOwnedProperties.length
           : allOwnedProperties.join(', ')
       }`
