@@ -13,9 +13,17 @@ console.log(addressInfo);
 addressInfo.forEach((addressWithInfo) => {
   const { address, lat, long, ownerName, allOwnedProperties } = addressWithInfo;
   try {
-    const marker = L.marker([parseFloat(lat), parseFloat(long)]).addTo(mymap);
+    const marker = L.circleMarker([
+      parseFloat(lat),
+      parseFloat(long),
+      { radius: 5 },
+    ]).addTo(mymap);
     marker.bindPopup(
-      `${address} <br> <strong>Owned By</strong>: ${ownerName} <br> <strong>All Properties Owned</strong>: <br>${allOwnedProperties.length}`
+      `${address} <br> <strong>Owned By</strong>: ${ownerName} <br> <strong>All Properties Owned</strong>: <br>${
+        allOwnedProperties.length > 10
+          ? allOwnedProperties.length
+          : allOwnedProperties.join(', ')
+      }`
     );
   } catch (err) {
     console.log(addressWithInfo);
