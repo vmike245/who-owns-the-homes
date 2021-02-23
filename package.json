@@ -1,0 +1,22 @@
+{
+  "name": "who-owns-the-homes",
+  "version": "1.0.0",
+  "description": "Map of all of the landlords in Denver",
+  "main": "address-with-info-old.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmike245/who-owns-the-homes.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmike245/who-owns-the-homes/issues"
+  },
+  "homepage": "https://github.com/vmike245/who-owns-the-homes#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}

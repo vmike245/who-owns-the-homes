@@ -17,6 +17,25 @@
   <body style="max-width: 1080px; margin: auto; font-family: Arial">
     <h1 style="text-align: center">Who Owns Denver?</h1>
     <div id="mapid" style="height: 500px"></div>
+    <div style="margin-top: 0.5rem">
+      <label for="minimum-properties">Minimum Number of Properties To Own:</label>
+      <select id="minimumProperties" name="minimum-properties" value="1" onchange="updateMinimum(event.target.value)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+      </select>
+    </div>
+    <p style="font-size: 0.75rem">It may take up to a couple of minutes for the map to update after changing this value (there is a lot of data)</p>
     <main style="padding: 1rem">
       <div>
         <h2>What is this?</h2>
@@ -45,19 +64,30 @@
       </div>
       <div>
         <h3>Things of Note</h3>
+        <p>Since this list is compiled by owner, there are owners that some
+          people may not typically consider landlords. Owners like the "CITY &
+          COUNTY OF DENVER" or "SCHOOL DISTRICT NO 1". I left those in the
+          data set because I didn't want to accidentally remove one that
+          sounds like it is a government entity when really it is a private
+          entity.</p>
+      </div>
+      <div>
+        <h3>Current List of Government Owners (marked with red circles)</h3>
         <ul>
           <li>
-            Since this list is compiled by owner, there are owners that some
-            people may not typically consider landlords. Owners like the "CITY &
-            COUNTY OF DENVER" or "SCHOOL DISTRICT NO 1". I left those in the
-            data set because I didn't want to accidentally remove one that
-            sounds like it is a government entity when really it is a private
-            entity.
+            CITY & COUNTY OF DENVER
           </li>
           <li>
-            Government entities are marked using a red circle. Currently that
-            only includes the "CITY & COUNTY OF DENVER" and "UNITED STATES OF
-            AMERICA" but more can be added to that list if necessary
+            UNITED STATES OF AMERICA
+          </li>
+          <li>
+            STATE OF COLORADO
+          </li>
+          <li>
+            DENVER SCHOOL FACILITIES LEASING CORPORATION
+          </li>
+          <li>
+            SCHOOL DISTRICT NO 1
           </li>
         </ul>
       </div>
