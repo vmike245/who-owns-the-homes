@@ -1,3 +1,129 @@
+:root {
+    --header-height: 3em;
+    --blue: rgb(52, 118, 241);
+}
+
+body {
+}
+
+a[data-toggle-target] {
+    cursor: pointer;
+}
+
+.is-hidden-mobile {
+    display: none;
+}
+
+.map-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    margin: 0;
+    padding: .5em 0;
+    display: flex;
+    align-items: baseline;
+    box-shadow: 0px 6px 5px #0003;
+    z-index: 800;
+    background-color: white;
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.25em;
+    margin: 0 1em;
+}
+
 #mapid {
-    height: 90vh;
+    flex: 1 1 auto;
+}
+
+.map-controls {
+    display: flex;
+}
+.map-controls label {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.map-controls select {
+    width: auto;
+    margin: 6px;
+}
+
+.about__btn { display: none; }
+
+@media screen and (min-width: 480px) {
+    .is-hidden-mobile { display: inherit; }
+    .is-mobile { display: none; }
+    .about {
+        --left-padding: 30px;
+        position: fixed;
+        right:0;
+        top:0;
+        width: clamp(350px,60vw,600px);
+        height: 100vh;
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 0 0 20px #0005;
+        padding-left: var(--left-padding);
+        border-left: 1px solid var(--blue);
+        transition: transform ease-in-out 200ms;
+    }
+
+    .about[data-toggled] {
+        transform: translateX( 0 );
+    }
+
+    .about:not([data-toggled]) {
+        transform: translateX( calc( 100% - var(--left-padding) ));
+    }
+
+    .about:not([data-toggled]):hover {
+        transform: translateX( calc( 100% - var(--left-padding) - 5px ));
+    }
+
+    .about[data-toggled] .about__btn .about__btn--close {
+        display: none;
+    }
+
+    .about:not([data-toggled]) .about__btn .about__btn--open {
+        display: none;
+    }
+
+    .about__btn {
+        background-color: var(--blue);
+        color: white;
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        height: 20px;
+        width: 50vh;
+        line-height: 20px;
+        font-weight: bold;
+        padding: 0 10px;
+        text-align: center;
+        transform-origin: 0 0;
+        transform: rotate(90deg) translateX(-50%);
+        z-index: 1;
+    }
+
+    .about__btn:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    .about__container {
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        overflow-y: scroll;
+        padding: 0 1em 0 var(--left-padding);
+    }
 }
