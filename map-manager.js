@@ -23,7 +23,7 @@ const setMarkers = (addressesToMap) => {
   markerLayerGroup.clearLayers();
   addressesToMap.forEach((addressWithInfo, index) => {
     const {
-      address,
+      buildingAddress1,
       lat,
       long,
       ownerName,
@@ -38,11 +38,7 @@ const setMarkers = (addressesToMap) => {
         }),
       }).addTo(markerLayerGroup);
       marker.bindPopup(
-        `${address} <br> <strong>Owned By</strong>: ${ownerName} <br> <strong>All Properties Owned</strong>: <br>${
-          allOwnedProperties.length > 25
-            ? allOwnedProperties.length
-            : allOwnedProperties.join(', ')
-        }`
+        `${buildingAddress1 } <br> <strong>Owned By</strong>: ${ownerName} <br> <strong>All Properties Owned Info</strong>: <br> Count:${allOwnedProperties.propertyCount} <br> Total Appraised Value: ${allOwnedProperties.totalAppraisedValue || 0}`
       );
     } catch (err) {
       console.log(index);
@@ -52,7 +48,7 @@ const setMarkers = (addressesToMap) => {
 
 const updateMinimum = (value) => {
   const filteredAddresses = addressInfo.filter(
-    ({ allOwnedProperties }) => allOwnedProperties.length >= value
+    ({ allOwnedProperties }) => allOwnedProperties.propertyCount >= value
   );
   setMarkers(filteredAddresses);
 };
