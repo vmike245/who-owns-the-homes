@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/who-owns-the-homes/static/css/main.03e6dd5b.css",
+    "main.js": "/who-owns-the-homes/static/js/main.d662cd26.js",
+    "index.html": "/who-owns-the-homes/index.html",
+    "main.03e6dd5b.css.map": "/who-owns-the-homes/static/css/main.03e6dd5b.css.map",
+    "main.d662cd26.js.map": "/who-owns-the-homes/static/js/main.d662cd26.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.03e6dd5b.css",
+    "static/js/main.d662cd26.js"
+  ]
+}
