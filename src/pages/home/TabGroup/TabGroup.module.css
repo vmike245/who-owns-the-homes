@@ -1,0 +1,6 @@
+.tab {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 25px;
+  text-shadow: 1px 1px 0px black;
+  border: none;
+}
