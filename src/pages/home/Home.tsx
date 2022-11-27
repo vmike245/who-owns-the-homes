@@ -43,20 +43,16 @@ export const Home: FC = () => {
   }, [minimumPropertiesToOwn, yearToUse]);
   return (
     <div className="width-100 height-100 position-relative">
-      <h1
-        className="padding-3 white-space-nowrap margin-0 zIndex-5"
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: '50%',
-          left: '45%',
-          width: 'fit-content',
-          whiteSpace: 'nowrap',
-          textShadow: '1px 1px 0px white',
-        }}
-      >
-        Who Owns Denver?
-      </h1>
+      {/* padding-x-5 is used to make it look good on mobile */}
+      <div className="width-100 padding-y-3 padding-x-5 zIndex-5 text-align-center">
+        <h1
+          style={{
+            textShadow: '1px 1px 0px white',
+          }}
+        >
+          Who Owns Denver?
+        </h1>
+      </div>
       {isLoading ? <LoadingIndicator /> : <Map addresses={addresses}></Map>}
       <TabGroup tabNames={['Settings', 'About', 'Data']}>
         <Tab>
