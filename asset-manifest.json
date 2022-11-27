@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/who-owns-the-homes/static/css/main.03e6dd5b.css",
-    "main.js": "/who-owns-the-homes/static/js/main.d662cd26.js",
+    "main.css": "/who-owns-the-homes/static/css/main.9eee045f.css",
+    "main.js": "/who-owns-the-homes/static/js/main.34aef244.js",
+    "static/media/apartment-building.png": "/who-owns-the-homes/static/media/apartment-building.ac118f382aff4b105d4d.png",
+    "static/media/home.png": "/who-owns-the-homes/static/media/home.ea18f95ab335485573e0.png",
     "index.html": "/who-owns-the-homes/index.html",
-    "main.03e6dd5b.css.map": "/who-owns-the-homes/static/css/main.03e6dd5b.css.map",
-    "main.d662cd26.js.map": "/who-owns-the-homes/static/js/main.d662cd26.js.map"
+    "main.9eee045f.css.map": "/who-owns-the-homes/static/css/main.9eee045f.css.map",
+    "main.34aef244.js.map": "/who-owns-the-homes/static/js/main.34aef244.js.map"
   },
   "entrypoints": [
-    "static/css/main.03e6dd5b.css",
-    "static/js/main.d662cd26.js"
+    "static/css/main.9eee045f.css",
+    "static/js/main.34aef244.js"
   ]
 }
