@@ -1,0 +1,26 @@
+.loading {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border-radius: 4px;
+  background-size: contain;
+  /* Here we declare our inline animation */
+  animation: rotate 3s linear infinite;
+}
+
+/* Here we define our animation with the name "rotate" */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.overlay {
+  opacity: 0.85;
+  position: absolute;
+  display: flex;
+}

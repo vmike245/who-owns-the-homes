@@ -14,16 +14,15 @@ const TAB_COLORS = [
 ];
 
 export const TabGroup: FC<Props> = ({ tabNames, children }) => {
-  // children.map(())
   const [indexOfTabDisplaying, setIndexOfTabDisplaying] = useState<number>(0);
   return (
     <div
       style={{
         position: 'absolute',
         bottom: '0px',
-        zIndex: 500,
         width: 'min(90%, 500px)',
       }}
+      className="zIndex-1"
     >
       <div className="flex-row">
         {tabNames.map((tabName, index) => {
@@ -41,9 +40,6 @@ export const TabGroup: FC<Props> = ({ tabNames, children }) => {
               }}
               style={{
                 background: TAB_COLORS[index],
-                // borderTopLeftRadius: '5px',
-                // borderTopRightRadius: '25px',
-                // textShadow: '1px 1px 0px black',
               }}
             >
               {tabName}
@@ -57,12 +53,8 @@ export const TabGroup: FC<Props> = ({ tabNames, children }) => {
           <div
             key={index}
             style={{
-              // ...(indexOfTabDisplaying === -1 && {
-              //   transition: 'height 0.2s ease',
-              // }),
               transition: 'height 0.4s ease',
               height: isTabShowing ? '500px' : '0px',
-              // borderTop: `5px solid ${TAB_COLORS[index]}`,
               overflow: 'hidden',
             }}
           >

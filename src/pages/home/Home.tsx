@@ -3,6 +3,7 @@ import { GET } from '../../services.ts/api';
 import { Tab } from './Tab';
 import { Map } from './Map';
 import { TabGroup } from './TabGroup/TabGroup';
+import { LoadingIndicator } from './LoadingIndicator/LoadingIndicator';
 
 export interface Address {
   buildingAddress1: string;
@@ -25,36 +26,38 @@ export interface Address {
 }
 
 export const Home: FC = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [addresses, setAddresses] = useState<Address[]>([]);
   const [minimumPropertiesToOwn, setMinimumPropertiesToOwn] =
-    useState<number>(10);
+    useState<number>(3);
   const [yearToUse, setYearToUse] = useState<number>(2022);
 
   useEffect(() => {
+    setIsLoading(true);
     GET<Address[]>(`landlords/${yearToUse}`, {
       minimumProperties: `${minimumPropertiesToOwn}`,
     }).then((response) => {
+      setIsLoading(false);
       setAddresses(response);
     });
   }, [minimumPropertiesToOwn, yearToUse]);
   return (
     <div className="width-100 height-100 position-relative">
       <h1
-        className="padding-3 white-space-nowrap margin-0"
+        className="padding-3 white-space-nowrap margin-0 zIndex-5"
         style={{
           position: 'absolute',
           top: 0,
           right: '50%',
           left: '45%',
           width: 'fit-content',
-          zIndex: '500',
           whiteSpace: 'nowrap',
           textShadow: '1px 1px 0px white',
         }}
       >
         Who Owns Denver?
       </h1>
-      <Map addresses={addresses}></Map>
+      {isLoading ? <LoadingIndicator /> : <Map addresses={addresses}></Map>}
       <TabGroup tabNames={['Settings', 'About', 'Data']}>
         <Tab>
           <label
@@ -83,9 +86,8 @@ export const Home: FC = () => {
           >
             <span>
               What is the minimum number of parcels a landlord should own to
-              show up on this map? WARNING: Selecting below 5 parcels will
-              freeze the screen. If you continue to wait it will eventually
-              load.
+              show up on this map? WARNING: Selecting below 3 parcels may take a
+              long time to load.
             </span>
             <select
               className="margin-left-2"
@@ -132,8 +134,8 @@ export const Home: FC = () => {
               information is useful to know how the existence of landlords
               affects the demand. If we only allowed owner occupied homes in
               Denver then the maximum demand would be equal to the population of
-              Denver. As a class, owner occupiers have a maximum demand
-              possible. Landlords as a class have an infinite demand, since a
+              Denver. As a class, owner occupiers have a maximum possible
+              demand. Landlords as a class have an infinite demand, since a
               single landlord can want to own as many properties as possible.
               This level of demand affects the supply which in turn affects
               prices. <br /> <br />
@@ -185,7 +187,7 @@ export const Home: FC = () => {
               but if the owner of that parcel also owns other parcels then all
               of the parcels they own will show here. Not all properties on this
               map are rentals, but all parcels meet my definition of landlord
-              owned, according to how I have defined landlords.
+              owned.
             </p>
           </section>
           <section>

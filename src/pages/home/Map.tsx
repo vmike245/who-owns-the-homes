@@ -1,7 +1,12 @@
+import { FC, memo } from 'react';
 import { MapContainer, CircleMarker, Popup, TileLayer } from 'react-leaflet';
 import { Address } from './Home';
 
 // const SAME_OWNER_COLOR = '#000000';
+
+interface Props {
+  addresses: Address[];
+}
 
 const governmentEntities = [
   'CITY & COUNTY OF DENVER',
@@ -27,7 +32,13 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
 });
 
-export const Map = ({ addresses }: { addresses: Address[] }) => {
+const addressesComparison = (previousProps: Props, nextProps: Props) => {
+  return (
+    previousProps?.addresses.length === nextProps?.addresses.length //&&
+  );
+};
+
+export const Map: FC<Props> = memo(({ addresses }) => {
   const addressesToShow = addresses.filter(({ ownerName }) => {
     return !ownersToSkip.includes(ownerName);
   });
@@ -37,6 +48,7 @@ export const Map = ({ addresses }: { addresses: Address[] }) => {
       zoom={16}
       preferCanvas={true}
       style={{ height: '100vh' }}
+      className="zIndex-1"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -93,4 +105,4 @@ export const Map = ({ addresses }: { addresses: Address[] }) => {
       )}
     </MapContainer>
   );
-};
+}, addressesComparison);
