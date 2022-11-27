@@ -44,7 +44,10 @@ export const Home: FC = () => {
   return (
     <div className="width-100 height-100 position-relative">
       {/* padding-x-5 is used to make it look good on mobile */}
-      <div className="width-100 padding-y-3 padding-x-5 zIndex-5 text-align-center">
+      <div
+        className="width-100 padding-y-3 padding-x-5 zIndex-5 text-align-center"
+        style={{ position: 'absolute' }}
+      >
         <h1
           style={{
             textShadow: '1px 1px 0px white',
